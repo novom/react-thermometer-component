@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import './Thermometer.css'
 
+const METER_WIDTH_RATIO = 0.63;
+
 class Thermometer extends Component {
   render() {
     this.options = this._generateOptions()
@@ -20,7 +22,7 @@ class Thermometer extends Component {
       <div style={{ height: height, width: width }} className={`thermometer ${size} ${theme}`}>
         <div className="thermometer__draw-a"></div>
         <div className={`thermometer__draw-b${reverse}`}></div>
-        <div className="thermometer__meter">
+        <div style={{ width: width * METER_WIDTH_RATIO }} className="thermometer__meter">
           <ul className="thermometer__statistics">{stepIntervals}</ul>
           <div style={heightPercent} className="thermometer__mercury">
             <div className="thermometer__percent-current">{valstr}</div>
