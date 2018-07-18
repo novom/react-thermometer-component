@@ -7,16 +7,17 @@ class Thermometer extends Component {
     this.options = this._generateOptions()
     const theme = `thermometer--theme-${this.options.theme()}`
     const size = `thermometer--${this.options.size()}`
-    const height = { height: `${this.options.height}px` }
+    const height = `${this.options.height}px`
     const heightPercent = { height: `${this.options.percent()}%` }
     const heightBgColor = { height: `calc(${this.options.height}px - 57px)` }
     const reverse = this.options.reverseGradient ? 'Reverse' : ''
     const valstr = this.options.valstr()
+    const width = `${this.options.width}px`
     this._createIntervals()
     const stepIntervals = this._createIntervalsUI(this.options.intervals)
 
     return (
-      <div style={height} className={`thermometer ${size} ${theme}`}>
+      <div style={{ height: height, width: width }} className={`thermometer ${size} ${theme}`}>
         <div className="thermometer__draw-a"></div>
         <div className={`thermometer__draw-b${reverse}`}></div>
         <div className="thermometer__meter">
@@ -41,6 +42,7 @@ class Thermometer extends Component {
       format: this.props.format || '',
       size: () => this.props.size === 'small' || this.props.size === 'normal' || this.props.size === 'large' ? this.props.size : 'normal',
       height: this.props.height || 200, //default 200
+      width: this.props.width || 50, //default 50
       valstr: () => this.options.value + this.options.format,
       percent: () => this.options.value / this.options.max * 100,
       reverseGradient: this.props.reverseGradient || false, // default false

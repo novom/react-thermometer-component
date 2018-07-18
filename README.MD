@@ -46,6 +46,7 @@ render(
 | `format` | `String` | Degrees format | `format="°C"` | '' |
 | `size` | `String` | Thermometer size. Can be small, normal or large | `size="large"` | normal |
 | `height` | `Number` | Thermometer height | `height={300}` | 200 |
+| `width` | `Number` | Thermometer width | `height={100}` | 50 |
 | `reverseGradient` | `boolean` | Reverse the gradient | `reverseGradient={true}` | false |
 
 # Contributors
