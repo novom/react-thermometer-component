@@ -115,8 +115,8 @@
     right: initial;
     bottom: -50px;
     left: -10px;
-    height: calc(1.1(0.08 * 100vh));
-    width: calc(1.1(0.08 * 100vh));  }
+    height: calc(1.1 * (0.08 * 100vh));
+    width: calc(1.1 * (0.08 * 100vh));  }
 
 .thermometer--large .thermometer__draw-b:before {
   width: 30px; }
@@ -127,8 +127,8 @@
   right: 0;
   bottom: initial;
   left: 0;
-  width: calc(0.85(0.08 * 100vh));
-  height: calc(0.85(0.08 * 100vh)); }
+  width: calc(0.85 * (0.08 * 100vh));
+  height: calc(0.85 * (0.08 * 100vh)); }
 
 .thermometer--large .thermometer__draw-bReverse:before {
   width: 30px; }
