@@ -15,7 +15,7 @@ class Thermometer extends Component {
     const reverse = this.options.reverseGradient ? 'Reverse' : ''
     const valstr = this.options.valstr()
     const width = `${this.options.width}px`
-    const meterWidth = `${width * METER_WIDTH_RATIO}px`
+    const meterWidth = `${this.options.width * METER_WIDTH_RATIO}px`
     this._createIntervals()
     const stepIntervals = this._createIntervalsUI(this.options.intervals)
 
