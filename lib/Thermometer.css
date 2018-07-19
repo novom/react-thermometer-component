@@ -24,7 +24,7 @@
   padding-left: 8px; }
 
 .thermometer--small .thermometer__draw-a {
-  width: 14px; }
+  width: inherit; }
   .thermometer--small .thermometer__draw-a:after {
     position: absolute;
     top: initial;
@@ -66,7 +66,7 @@
   padding-left: 13px; }
 
 .thermometer--normal .thermometer__draw-a {
-  width: 30px; }
+  width: inherit; }
   .thermometer--normal .thermometer__draw-a:after {
     position: absolute;
     top: initial;
@@ -108,7 +108,7 @@
   padding-left: 34px; }
 
 .thermometer--large .thermometer__draw-a {
-  width: 50px; }
+  width: inherit; }
   .thermometer--large .thermometer__draw-a:after {
     position: absolute;
     top: initial;
