@@ -15,6 +15,7 @@ class Thermometer extends Component {
     const reverse = this.options.reverseGradient ? 'Reverse' : ''
     const valstr = this.options.valstr()
     const width = `${this.options.width}px`
+    const meterWidth = `${width * METER_WIDTH_RATIO}px`
     this._createIntervals()
     const stepIntervals = this._createIntervalsUI(this.options.intervals)
 
@@ -22,7 +23,7 @@ class Thermometer extends Component {
       <div style={{ height: height, width: width }} className={`thermometer ${size} ${theme}`}>
         <div className="thermometer__draw-a"></div>
         <div className={`thermometer__draw-b${reverse}`}></div>
-        <div style={{ width: width * METER_WIDTH_RATIO }} className="thermometer__meter">
+        <div style={{ width: meterWidth }} className="thermometer__meter">
           <ul className="thermometer__statistics">{stepIntervals}</ul>
           <div style={heightPercent} className="thermometer__mercury">
             <div className="thermometer__percent-current">{valstr}</div>
