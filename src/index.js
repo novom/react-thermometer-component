@@ -24,7 +24,7 @@ class Thermometer extends Component {
     return (
       <div style={{ height: height, width: width }} className={`thermometer ${size} ${theme}`}>
         <div className="thermometer__draw-a"></div>
-        <div style={{ width: tankWidth, bottom: `${0.05 * this.options.height}px` }} className={`thermometer__draw-b${reverse}`}></div>
+        <div style={{ width: tankWidth, bottom: `${0.013 * this.options.height}px` }} className={`thermometer__draw-b${reverse}`}></div>
         <div style={{ width: meterWidth }} className="thermometer__meter">
           <ul className="thermometer__statistics">{stepIntervals}</ul>
           <div style={heightPercent} className="thermometer__mercury">
