@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './Thermometer.css'
 
 const METER_WIDTH_RATIO = 0.63;
+const TANK_WIDTH_RATIO = 0.8;
 
 class Thermometer extends Component {
   render() {
@@ -16,13 +17,14 @@ class Thermometer extends Component {
     const valstr = this.options.valstr()
     const width = `${this.options.width}px`
     const meterWidth = `${this.options.width * METER_WIDTH_RATIO}px`
+    const tankWidth = `${this.options.width * TANK_WIDTH_RATIO}px`
     this._createIntervals()
     const stepIntervals = this._createIntervalsUI(this.options.intervals)
 
     return (
       <div style={{ height: height, width: width }} className={`thermometer ${size} ${theme}`}>
         <div className="thermometer__draw-a"></div>
-        <div className={`thermometer__draw-b${reverse}`}></div>
+        <div style={{ width: tankWidth, bottom: '1vh' }} className={`thermometer__draw-b${reverse}`}></div>
         <div style={{ width: meterWidth }} className="thermometer__meter">
           <ul className="thermometer__statistics">{stepIntervals}</ul>
           <div style={heightPercent} className="thermometer__mercury">
