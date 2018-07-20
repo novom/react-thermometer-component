@@ -10,6 +10,7 @@ class Thermometer extends Component {
     const height = { height: `${this.options.height}px` }
     const heightPercent = { height: `${this.options.percent()}%` }
     const heightBgColor = { height: `calc(${this.options.height}px - 57px)` }
+    const mercuryID = this.options.mercuryID
     const reverse = this.options.reverseGradient ? 'Reverse' : ''
     const valstr = this.options.valstr()
     this._createIntervals()
@@ -24,7 +25,7 @@ class Thermometer extends Component {
           <div style={heightPercent} className="thermometer__mercury">
             <div className="thermometer__percent-current">{valstr}</div>
             <div className="thermometer__mask">
-              <div className={`thermometer__bg-color${reverse}`} style={heightBgColor}></div>
+              <div id={mercuryID} className={`thermometer__bg-color${reverse}`} style={heightBgColor}></div>
             </div>
           </div>
         </div>
@@ -37,6 +38,7 @@ class Thermometer extends Component {
       theme: () => this.props.theme === 'light' || this.props.theme === 'dark' ? this.props.theme : 'light',
       value: this.props.value || 0, //default 0
       max: this.props.max || 100, //default 100
+      mercuryID: this.props.mercuryID || '',
       steps: this.props.steps,
       format: this.props.format || '',
       size: () => this.props.size === 'small' || this.props.size === 'normal' || this.props.size === 'large' ? this.props.size : 'normal',
