@@ -44,7 +44,7 @@ render(
 | `max` | `Number` | Maximum value of thermometer | `max={100}` | 100 |
 | `steps` | `Number` | Thermometer dividers | `steps={3}` | 0 |
 | `format` | `String` | Degrees format | `format="°C"` | '' |
-| `mercuryID` | `String` | Custom ID on the thermometer inner part | `mercuryID="SomeId"` | '' |
+| `mercuryClass` | `String` | Custom class on the thermometer inner part | `mercuryClass="SomeClass"` | '' |
 | `size` | `String` | Thermometer size. Can be small, normal or large | `size="large"` | normal |
 | `height` | `Number` | Thermometer height | `height={300}` | 200 |
 | `reverseGradient` | `boolean` | Reverse the gradient | `reverseGradient={true}` | false |
