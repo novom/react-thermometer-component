@@ -11,6 +11,7 @@ class Thermometer extends Component {
     const heightPercent = { height: `${this.options.percent()}%` }
     const heightBgColor = { height: `calc(${this.options.height}px - 57px)` }
     const mercuryClass = this.options.mercuryClass
+    const borderClass = this.options.borderClass
     const reverse = this.options.reverseGradient ? 'Reverse' : ''
     const valstr = this.options.valstr()
     this._createIntervals()
@@ -18,7 +19,7 @@ class Thermometer extends Component {
 
     return (
       <div style={height} className={`thermometer ${size} ${theme}`}>
-        <div className="thermometer__draw-a"></div>
+        <div className={`thermometer__draw-a  ${borderClass}`}></div>
         <div className={`thermometer__draw-b${reverse}`}></div>
         <div className="thermometer__meter">
           <ul className="thermometer__statistics">{stepIntervals}</ul>
@@ -39,6 +40,7 @@ class Thermometer extends Component {
       value: this.props.value || 0, //default 0
       max: this.props.max || 100, //default 100
       mercuryClass: this.props.mercuryClass || '',
+      borderClass: this.props.borderClass || '',
       steps: this.props.steps,
       format: this.props.format || '',
       size: () => this.props.size === 'small' || this.props.size === 'normal' || this.props.size === 'large' ? this.props.size : 'normal',
